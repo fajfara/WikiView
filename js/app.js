@@ -6,15 +6,10 @@ $(document).ready(function(){
     $('#loading').hide();
     $('#errorEmpty').hide();
 
-    // Here i am trying to make it work, if your press enter it will also search, no luck so far 
-    $(".inputSearch").keyup(function(event) {
-        if (event.keyCode === 13) {
-            $("#searchBtn").click(loadWiki());
-        }
-    });
+    
 
     // if button clicked start the function to load data
-    $('#searchBtn').click(function loadWiki(){
+    $('#searchBtn').click(function(){
 
         // Show loading circle and remove and instances of nothing found div and then hide it(otherwise the red background stays)
         $('#loading').show();
@@ -99,6 +94,13 @@ $(document).ready(function(){
     });
     // end of click button even
     
+    // Here i am trying to make it work, if your press enter it will also search, no luck so far 
+    $("#icon_prefix").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#searchBtn").click();
+            console.log("You pressed enter");
+        }
+    });
 
     // Display error function
     function displayError(){
